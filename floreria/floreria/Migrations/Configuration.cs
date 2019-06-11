@@ -1,5 +1,6 @@
 namespace floreria.Migrations
 {
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -19,12 +20,15 @@ namespace floreria.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
+                context.Cliente.AddOrUpdate(
+                  p => p.Id,
+                  new Cliente { dni = 38867855, nombre= "Julian", direccion= "StaMarta" },
+                  new Cliente { dni = 35123654, nombre= "Marcos", direccion= "Oribe" },
+                  new Cliente { dni = 45002156, nombre = "Pepe", direccion = "Robertone" },
+                  new Cliente { dni = 38867855, nombre = "Julian", direccion = "StaMarta" },
+                  new Cliente { dni = 35123654, nombre = "Marcos", direccion = "Oribe" },
+                  new Cliente { dni = 45002156, nombre = "Pepe", direccion = "Robertone" }
+                );
             //
         }
     }
